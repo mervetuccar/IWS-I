@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Merve's Webpage</title>
+		<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+	</head>
+	<body style="width: 40em;">
+		<header>
+			<h2>Guest Book</h2>
+			<p>Please enter your name, last name and e-mail address with your comment. Thank you.</p>
+			<form>
+				<p><label>Name:
+						<input name = "name" type = "text" size = "30" id="name" />
+					</label>
+					<label>Last Name:
+						<input lastname = "lastname" type = "text" size = "30" id="lastname" />
+					</label>
+					<label>E-mail Address:
+						<input name = "email" type = "text" size = "30"  id="email"/>
+					</label>
+					<p><label>Comments:</label>
+						<br>
+						<textarea name = "comments"
+							rows = "5" cols = "40">  
+						</textarea>
+					</p>
+				</p>
+			
+				
+				<input type = "submit" value = "Submit" onclick="ClickedSubmit()"/>
+				<input type = "reset" value = "Clear"/>
+				<script type="text/javascript">
+
+				function ClickedSubmit()
+				{
+				
+				  
+				  var conn = new XMLHttpRequest();
+				  var name = document.getElementById('name').value;
+				  var lastname = document.getElementById('lastname').value;
+				  var email = document.getElementById('email').value;
+				  
+				  
+				  var pack = "action=confirm" + "&name=" + name  +"&lastname=" + lastname + "&email=" + email;
+				  
+				  var address = 'http://www.cs.uml.edu/~mtuccar/513_f2013/hw3/conn.php';
+				  
+				  conn.open('POST', address, true);
+				  conn.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+
+				  conn.send(pack);
+				  console.log("sent");
+	
+				}
+				</script>
+
+
+				
+			</form>
+			<p>"This is entirely my own work, except as disclosed in the documentation. I gave help to the following persons: None</p>
+            <p> Signed Merve Tuccar".</p>
+		</header>
+		
+		<footer>
+			&copy; 2013 Merve Tuccar
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,51 @@
+
+body {sfont: normal 16px/1.5em helvetica, aria, sans-serif; text-align:center; background-color:#FFFFF0}
+#header{font-family:"Lucida Sans Unicode", "Lucida Grande",sans-serif; padding:5px; height: 50px; background:#FF9900; color:black; 
+		text-align :justify; text-indent:70px; border: 1px solid #000000}
+#footer {padding:5px; height: 5px; background: #white; color:#FF9900; text-align : center; font-size:small; margin-top:100px}
+#rightmenu p {color:black}
+
+#container {
+	
+	margin-left:150px;
+	margin-right:150px;
+	background-color:#FFFFF0;
+}
+
+#leftmenu{
+	float:left;
+	width:20%;
+	background-color:#FF9900;
+	position: relative;
+	margin-top:150px;
+	padding-right:0px;
+	text-align:left; color:black; border: 1px solid #666666	
+}
+#rightmenu {
+	float:left;
+	width:10%;
+	padding-top:0px;
+	margin-top:150px;
+	margin-left:20px;
+	position:relative;
+	background:#FFFFF; 
+	text-align:left;
+}
+#content {
+	float:left;
+	width:40%;
+	text-align:center; color:black;
+	width:40em;
+	background-color:#FFFFFF}
+ 
+#footer {
+	clear:both;
+}
+
+a:link {color:#blue; text-decoration:none}      /* unvisited link */
+a:visited {color:#990099; text-decoration:none;}  /* visited link */
+a:hover {text-decoration:underline;}  /* mouse over link */
+a:active {color:#0000FF;text-decoration:underline;}  /* selected link */
+
+
+  

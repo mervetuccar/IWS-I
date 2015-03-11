@@ -1,0 +1,325 @@
+<html>
+	<head>
+		<title>Merve's Webpage</title>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+	</head>
+	<body>
+		<div id="header">
+				<h1>Internet and Web Systems I, Fall 2013</h1>
+				<br>
+				<br>
+		</div>
+		<div id ="container">
+			
+			
+			<h2>Auto Lease Calculation Tool</h2>
+			<form>
+				<table border="2" align="center"  bgcolor="#D0D0D0">
+					<tr>
+						<th>     </th>
+						<th>Year</th>
+						<th>Month</th>
+						<th>Lease Miles/Years</th>
+					</tr>
+					<tr>
+						<th>Estimated Miles</th>
+						<td><input type="text" name="estimatedmiles1" id="estimatedmiles1"/></td>
+						<td><input type="text" name="estimatedmiles2" id="estimatedmiles2"/></td>
+						<td><input type="text" name="estimatedmiles3" id="estimatedmiles3"/></td>
+					</tr>
+					<tr>
+						<th>Period</th>
+						<td><input type="text" name="input1" id="period1"/></td>
+						<td><input type="text" name="input2" id="period2"/></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>Percent Downpayment</th>
+						<td><input type="text" name="percentdownpayment" placeholder="%" id="percentdownpayment"/></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>Incentive/Interest Rate</th>	
+						<td align="center">High</td>
+						<td align="center">Low</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>Cost</th>
+						<td><input type="text" name="cost" placeholder="$" id="cost1"/></td>
+						<td><input type="text" name="cost" placeholder="$" id="cost2"/></td>
+						<td><input type="text" name="cost" placeholder="$" id="cost3"/></td>
+					</tr>
+					<tr>
+						<th>Down/Initial Payment</th>
+						<td><input type="text" name="downinitialpayment" placeholder="$" id="downinitialpayment1"/></td>
+						<td><input type="text" name="downinitialpayment" placeholder="$" id="downinitialpayment2"/></td>
+						<td><input type="text" name="downinitialpayment" placeholder="$" id="downinitialpayment3"/></td>
+					</tr>
+					<tr>
+						<th>Rebates/Incentives</th>
+						<td><input type="text" name="rebatesincentives1" placeholder="$" id="rebatesincentives1"/></td>
+						<td><input type="text" name="rebatesincentives2" placeholder="$" id="rebatesincentives2"/></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>$ Financed</th>
+						<td><input type="text" name="financed1" placeholder="$" id="financed1"/></td>
+						<td><input type="text" name="financed2" placeholder="$" id="financed2"/></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>% Interest/yr &#40;air&#41;</th>
+						<td><input type="text" name="interestyear1" placeholder="%" id="interestyear1"/></td>
+						<td><input type="text" name="interestyear2" placeholder="%" id="interestyear2"/></td>
+						<td></td>
+					</tr>
+					<tr>
+						<th>Monthly Payment</th>
+						<td><input type="text" name="monthlypayment1" placeholder="$" id="monthlypayment1"/></td>
+						<td><input type="text" name="monthlypayment2" placeholder="$" id="monthlypayment2"/></td>
+						<td><input type="text" name="monthlypayment3" placeholder="$" id="monthlypayment3"/></td>
+					</tr>
+					<tr>
+						<th>End Lease Payment</th>
+						<td></td>
+						<td></td>
+						<td><input type="text" name="endleasepayment" placeholder="$" id="endleasepayment"/></td>
+					</tr>
+					<tr>
+						<th>Miles/yr allowed</th>
+						<td></td>
+						<td></td>
+						<td><input type="text" name="milesyearallowed" id="milesyearallowed" /></td>
+					</tr>
+					<tr>
+						<th>$/add&#39;l mile</th>
+						<td></td>
+						<td></td>
+						<td><input type="text" name="addlmile" id="addlmile" /></td>
+					</tr>
+					<tr>
+						<th>Estimated add&#39;l miles</th>
+						<td></td>
+						<td></td>
+						<td><input type="text" name="estimatedaddlmiles" id="estimatedaddlmiles" /></td>
+					</tr>
+					<tr>
+						<th>Estimated $ add&#39;l miles</th>
+						<td></td>
+						<td></td>
+						<td><input type="text" name="estimateddollaraddlmiles" id="estimateddollaraddlmiles" /></td>
+					</tr>
+					<tr>
+						<th>Residual Value</th>
+						<td></td>
+						<td></td>
+						<td><input type="text" name="residualvalue" id="residualvalue" /></td>
+					</tr>				
+				</table>
+						
+				<input type="button" value="Calculate" onclick="ClickedCalculate()">
+				<input type="reset" value="Reset" onclick="ClickedReset()">
+				<br> <br>		
+				<table border="1" align="center" color="white">
+				     <tr>
+						<th>     </th>
+						<th>Year</th>
+						<th>Month</th>
+						<th>Lease Miles/Years</th>
+					</tr>
+					<tr>
+						<th>Total Monthly Payments</th>
+						<td id="totalmonthlypayments1"></td>
+						<td id="totalmonthlypayments2"></td>
+						<td id="totalmonthlypayments3"></td>
+					</tr>
+					<tr>
+						<th>Total Ownership Cost</th>
+						<td id="totalownershipcost1"></td>
+						<td id="totalownershipcost2"></td>
+						<td id="totalownershipcost3"></td>						
+					</tr>
+					<tr>
+						<th>Per Mile Driven</th>
+						<td id="permiledriven1"></td>
+						<td id="permiledriven2"></td>
+						<td id="permiledriven3"></td>		
+					</tr>
+					<tr>
+						<th>Per Month Owned</th>
+						<td id="permonthowned1"></td>
+						<td id="permonthowned2"></td>
+						<td id="permonthowned3"></td>												
+					</tr>
+					<tr>
+						<th>If Sold @Residual Value</th>
+						<td id="ifsoldresidualvalue1"></td>
+						<td id="ifsoldresidualvalue2"></td>
+					</tr>
+					<tr>
+						<th>Per Mile Driven</th>
+						<td id="permiledriven6"></td>
+						<td id="permiledriven7"></td>			
+					</tr>
+					<tr>
+						<th>Per Month Owned</th>
+						<td id="permonthowned6"></td>
+						<td id="permonthowned7"></td>						
+					</tr>
+				</table>
+				
+				<script type="text/javascript">
+					function ClickedCalculate()
+					{
+   					    var em1 = parseFloat(document.getElementById("estimatedmiles1").value);
+						em2 = em1/12;
+						var em2 = parseFloat(document.getElementById("estimatedmiles2").value);
+						var em3 = parseFloat(document.getElementById("estimatedmiles3").value);
+						
+						var p1 = parseFloat(document.getElementById("period1").value);
+						var p2 = parseFloat(document.getElementById("period2").value);
+						p2 = p1*12;
+						
+						var pd = parseFloat(document.getElementById("percentdownpayment").value);
+						
+						var cost1 = parseFloat(document.getElementById("cost1").value);
+						var cost2 = parseFloat(document.getElementById("cost2").value);
+						var cost3 = parseFloat(document.getElementById("cost3").value);
+					
+						var dip1 = parseFloat(document.getElementById("downinitialpayment1").value);
+						dip = cost1*pd;
+						var dip2 = parseFloat(document.getElementById("downinitialpayment2").value);
+						dip2 = cost2*pd;
+						var dip3 = parseFloat(document.getElementById("downinitialpayment3").value);
+						dip3 = cost3*pd;
+						var ri1 = parseFloat(document.getElementById("rebatesincentives1").value);
+						var ri2 = parseFloat(document.getElementById("rebatesincentives2").value);
+						
+						var f1 = parseFloat(document.getElementById("financed1").value);
+						f1 = cost1-dip-ri1;
+						var f2 = parseFloat(document.getElementById("financed2").value);
+						f2 = cost2-dip-ri2;
+						
+						var iy1 = parseFloat(document.getElementById("interestyear1").value);
+						var iy2 = parseFloat(document.getElementById("interestyear2").value);
+						
+						var mp1 = parseFloat(document.getElementById("monthlypayment1").value);
+						
+					    var mp2 = parseFloat(document.getElementById("monthlypayment2").value);
+						var mp3 = parseFloat(document.getElementById("monthlypayment3").value);
+						mp3 = cost3/200;
+						
+						var elp = parseFloat(document.getElementById("endleasepayment").value);
+						
+						var mya = parseFloat(document.getElementById("milesyearallowed").value);
+						mya = em3;
+						var am = parseFloat(document.getElementById("addlmile").value);
+						
+						var eam = parseFloat(document.getElementById("estimatedaddlmiles").value);
+						eam = (em1-mya)*p2;
+						var edam = parseFloat(document.getElementById("estimateddollaraddlmiles").value);
+						edam = eam*am;
+						var rv = parseFloat(document.getElementById("residualvalue").value);
+						rv = 0.56*cost2;
+						var tmp1 = parseFloat(document.getElementById("totalmonthlypayments1").value);
+						tmp1 = mp1*p2;
+						var tmp2 = parseFloat(document.getElementById("totalmonthlypayments2").value);
+						tmp2 = mp2*p2;
+						var tmp3 = parseFloat(document.getElementById("totalmonthlypayments3").value);
+						tmp3 = mp3*p2;
+						var toc1 = parseFloat(document.getElementById("totalownershipcost1").value);
+						toc1 = tmp1+dip;
+						var toc2 = parseFloat(document.getElementById("totalownershipcost2").value);
+						toc2 = tmp2+dip;
+						var toc3 = parseFloat(document.getElementById("totalownershipcost3").value);
+						toc3 = dip+mp3*p2+eam;
+						
+						var pmd1 = parseFloat(document.getElementById("permiledriven1").value);
+						pmd1 = toc1/(em2*p2);
+						var pmd2 = parseFloat(document.getElementById("permiledriven2").value);
+						pmd2 = toc2/(em2*p2);
+						var pmd3 = parseFloat(document.getElementById("permiledriven3").value);
+						pmd3 = toc3/(em2*p2);
+						
+						
+						var pmo1 = parseFloat(document.getElementById("permonthowned1").value);
+					    pmo1 = toc1/em2;
+						var pmo2 = parseFloat(document.getElementById("permonthowned2").value);
+						pmo2 = toc2/em2;
+						var pmo3 = parseFloat(document.getElementById("permonthowned3").value);
+						pmo3 = toc3/em2;
+						
+						var isrv1 = parseFloat(document.getElementById("ifsoldresidualvalue1").value);
+						isrv1 = toc1-rv;
+						var isrv2 = parseFloat(document.getElementById("ifsoldresidualvalue2").value);
+						isrv2 = toc2-rv;
+						var pmd6 = parseFloat(document.getElementById("permiledriven6").value);
+						pmd6 = isrv1/(em2*p2);
+						var pmd7 = parseFloat(document.getElementById("permiledriven7").value);
+						pmd7 = isrv2/(em2*p2);
+						var pmo6 = parseFloat(document.getElementById("permonthowned6").value);
+						pmo6 = isrv1/em2*p2;
+						var pmo7 = parseFloat(document.getElementById("permonthowned7").value);
+						pmo7 = isrv2/em2*p2;														
+					
+						document.getElementById("totalmonthlypayments1").innerHTML = (Math.round(tmp1*100)/100);
+						document.getElementById("totalmonthlypayments2").innerHTML = (Math.round(tmp2*100)/100);
+						document.getElementById("totalmonthlypayments3").innerHTML = (Math.round(tmp3*100)/100);
+						
+						document.getElementById("totalownershipcost1").innerHTML = (Math.round(toc1*100)/100);
+						document.getElementById("totalownershipcost2").innerHTML = (Math.round(toc2*100)/100);
+						document.getElementById("totalownershipcost3").innerHTML = (Math.round(toc3*100)/100);
+						
+						
+						
+						document.getElementById("permiledriven1").innerHTML = pmd1;
+						document.getElementById("permiledriven2").innerHTML = pmd2;
+						document.getElementById("permiledriven3").innerHTML = pmd3;
+						
+						
+						
+						document.getElementById("permonthowned1").innerHTML = (Math.round(pmo1*100)/100);
+						document.getElementById("permonthowned2").innerHTML = (Math.round(pmo2*100)/100);
+					    document.getElementById("permonthowned3").innerHTML = (Math.round(pmo3*100)/100);
+					
+						
+						document.getElementById("ifsoldresidualvalue1").innerHTML = (Math.round(isrv1*100)/100);
+						document.getElementById("ifsoldresidualvalue2").innerHTML = (Math.round(isrv2*100)/100);
+						
+						
+						document.getElementById("permiledriven6").innerHTML = (Math.round(pmd6*100)/100);
+						document.getElementById("permiledriven7").innerHTML = (Math.round(pmd7*100)/100);
+						
+						
+						document.getElementById("permonthowned6").innerHTML = (Math.round(pmo6*100)/100);
+						document.getElementById("permonthowned7").innerHTML = (Math.round(pmo7*100)/100);
+									
+					
+					}	
+					function ClickedReset()
+					{
+					
+					}
+					
+				</script>
+			</form>
+				<br><br>
+				<p>"This is entirely my own work, except as disclosed in the documentation. I gave help to the following persons: None</p>
+				<p> Signed Merve Tuccar".</p>
+			
+			
+			
+			
+			<div id = "footer">
+				&copy; 2013 Merve Tuccar
+				<p>Contact information: <a href="mailto:merve_tuccar@student.uml.edu">merve_tuccar@student.uml.edu</a></p>
+			</div>
+		
+		</div>
+		
+	</body>
+
+	
+</html>
